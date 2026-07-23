@@ -1,0 +1,23 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Copy requirement files first for cache efficiency
+# We don't have a requirements.txt yet, so we'll install directly, 
+# but in a real project we would COPY requirements.txt .
+RUN pip install fastapi uvicorn pydantic requests pandas numpy xgboost scikit-learn joblib langchain-ollama
+
+# Copy the rest of the application
+COPY Sprint1 /app/Sprint1
+COPY Sprint2 /app/Sprint2
+COPY Sprint0 /app/Sprint0
+
+# Expose port
+EXPOSE 8000
+
+# Set Python path so it can find state.py etc
+ENV PYTHONPATH=/app/Sprint1
+
+WORKDIR /app/Sprint1
+
+CMD ["python", "api.py"]

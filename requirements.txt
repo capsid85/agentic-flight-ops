@@ -1,0 +1,13 @@
+fastapi==0.110.0
+uvicorn==0.28.0
+xgboost==2.0.3
+pandas==2.2.1
+numpy==1.26.4
+scikit-learn==1.4.1.post1
+google-genai==0.3.0
+python-dotenv==1.0.1
+requests==2.31.0
+langgraph==0.0.26
+langchain-core==0.1.33
+faiss-cpu==1.8.0
+tenacity==8.2.3

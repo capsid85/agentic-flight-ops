@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data files (Do not upload large CSVs to GitHub!)
+*.csv
+Sprint0/data/*.csv
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Frontend dependencies
+node_modules/
+Sprint1/frontend/node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Vector DB index files
+faiss_index/
+*.index
+*.pkl
+!backend/models/encoders.pkl
+
+# SQLite database (if used for caching)
+*.sqlite
+*.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
