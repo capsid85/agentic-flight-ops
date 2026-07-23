@@ -17,6 +17,13 @@ An autonomous, full-stack AI system that continuously monitors live flight opera
 
 This project follows a micro-agent architecture combined with an event-driven websocket backend.
 
+### System Flow
+- **1. Live Data Ingestion**: The `Flight Agent` pulls telemetry from OpenSky/FlightRadar24, while the `Weather Agent` pings NOAA for METARs, and the `NOTAM Agent` checks FAA systems for ground stops.
+- **2. Machine Learning Layer**: Real-time weather and flight schedules are passed to the XGBoost ML model to probabilistically predict delays.
+- **3. Knowledge Retrieval (RAG)**: The `Root Cause Agent` queries the FAISS vector database to retrieve official FAA protocols based on the delay triggers.
+- **4. Agentic Synthesis**: The `Supervisor Agent` (powered by Gemini) synthesizes the ML prediction, telemetry, and FAA rulebook citations to generate 3 ranked operational directives.
+- **5. Real-time Delivery**: The FastAPI backend streams the final JSON payload to the React/Deck.gl frontend for immediate visualization.
+
 ```mermaid
 graph TD
     subgraph "Live Data Ingestion"
