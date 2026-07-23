@@ -14,6 +14,27 @@ import ReactMarkdown from 'react-markdown';
 // Free dark basemap from Carto
 const MAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
+const AIRPORT_NAMES: Record<string, string> = {
+  "ATL": "Atlanta", "ORD": "Chicago", "DFW": "Dallas", "DEN": "Denver",
+  "JFK": "New York", "LAX": "Los Angeles", "SFO": "San Francisco",
+  "SEA": "Seattle", "MIA": "Miami", "BOS": "Boston", "CLT": "Charlotte",
+  "PHX": "Phoenix", "IAH": "Houston", "MCO": "Orlando", "EWR": "Newark",
+  "MSP": "Minneapolis", "DTW": "Detroit", "PHL": "Philadelphia",
+  "LGA": "New York", "BWI": "Baltimore", "SLC": "Salt Lake City",
+  "SAN": "San Diego", "IAD": "Washington DC", "DCA": "Washington DC",
+  "MDW": "Chicago", "TPA": "Tampa", "PDX": "Portland", "HNL": "Honolulu",
+  "BNA": "Nashville", "AUS": "Austin", "DAL": "Dallas", "STL": "St. Louis",
+  "MSY": "New Orleans", "SMF": "Sacramento", "SJC": "San Jose",
+  "SNA": "Orange County", "RDU": "Raleigh", "CLE": "Cleveland",
+  "IND": "Indianapolis", "PIT": "Pittsburgh", "SAT": "San Antonio",
+  "CVG": "Cincinnati", "CMH": "Columbus", "RSW": "Fort Myers",
+  "PBI": "West Palm Beach", "JAX": "Jacksonville", "ANC": "Anchorage",
+  "LHR": "London", "CDG": "Paris", "FRA": "Frankfurt", "HND": "Tokyo",
+  "DXB": "Dubai", "SYD": "Sydney", "YYZ": "Toronto", "MEX": "Mexico City"
+};
+
+const getAirportName = (code: string) => AIRPORT_NAMES[code] || code;
+
 export default function App() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<any>(null);
@@ -236,7 +257,7 @@ export default function App() {
                 <div className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Callsign</div>
                 <div className="text-3xl font-extrabold text-white mt-1 tracking-tight">{data?.flight?.flight_id || 'STANDBY'}</div>
                 <div className="text-cyan-400 text-xs mt-1 font-mono font-bold flex justify-between items-center">
-                  <span>{data ? `${data?.flight?.origin} ✈ ${data?.flight?.destination}` : 'Awaiting initialization...'}</span>
+                  <span>{data ? `${getAirportName(data?.flight?.origin)} ✈ ${getAirportName(data?.flight?.destination)}` : 'Awaiting initialization...'}</span>
                   {data?.flight?.status && <span className="text-[9px] text-amber-400 bg-slate-900/90 px-1.5 py-0.5 rounded border border-amber-500/30">{data.flight.status.split('(')[0]}</span>}
                 </div>
               </div>
@@ -248,7 +269,7 @@ export default function App() {
                     {data ? (
                       <>
                         <span>{data?.risk?.predicted_delay_minutes || 0}m</span>
-                        <span className="text-[9px] font-mono text-slate-400">
+                        <span className="text-sm font-mono text-slate-400 font-semibold ml-1">
                           {data?.risk?.confidence_score >= 0.90 ? '±5m' : '±15m'}
                         </span>
                       </>
