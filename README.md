@@ -1,11 +1,5 @@
 # Agentic Aviation Intelligence Platform
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![React](https://img.shields.io/badge/React-18-cyan.svg)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.111-green.svg)
-![XGBoost](https://img.shields.io/badge/XGBoost-ML-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-purple.svg)
-
 An autonomous, full-stack AI system that continuously monitors live flight operations, predicts delays with strict ML evaluation metrics, performs root cause analysis grounded in RAG, and generates ranked recovery recommendations.
 
 ![Flight Dashboard](screenshot.png)
