@@ -265,7 +265,7 @@ export default function App() {
 
               <div className="flex gap-2">
                 <div className="glass-card flex-1 border-indigo-500/20 p-2.5 flex flex-col justify-between">
-                  <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Delay Predict</div>
+                  <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Net Delay</div>
                   <div className="text-xl font-bold text-indigo-400 mt-1 data-glow flex items-baseline gap-1">
                     {data ? (
                       <>
