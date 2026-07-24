@@ -23,6 +23,7 @@ const AIRPORT_NAMES: Record<string, string> = {
   "LGA": "New York", "BWI": "Baltimore", "SLC": "Salt Lake City",
   "SAN": "San Diego", "IAD": "Washington DC", "DCA": "Washington DC",
   "MDW": "Chicago", "TPA": "Tampa", "PDX": "Portland", "HNL": "Honolulu",
+  "LAS": "Las Vegas",
   "BNA": "Nashville", "AUS": "Austin", "DAL": "Dallas", "STL": "St. Louis",
   "MSY": "New Orleans", "SMF": "Sacramento", "SJC": "San Jose",
   "SNA": "Orange County", "RDU": "Raleigh", "CLE": "Cleveland",
