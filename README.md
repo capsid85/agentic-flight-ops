@@ -4,6 +4,11 @@ An autonomous, full-stack AI system that continuously monitors live flight opera
 
 ![Flight Dashboard](screenshot.png)
 
+## 📖 Context & The Problem
+In commercial aviation, cascading flight delays cost airlines billions of dollars annually. When weather or ground stops occur, human operations controllers must rapidly parse through complex FAA regulations, raw METAR weather data, and scattered flight telemetry to make rerouting decisions. 
+
+**The Solution:** This project replaces manual operational guesswork with an **Agentic AI workflow**. By combining a predictive XGBoost machine learning model with a LangGraph multi-agent RAG pipeline, the system can autonomously predict delays and generate FAA-compliant recovery strategies in milliseconds.
+
 ## 🚀 Features
 
 - **Predictive Machine Learning**: A highly optimized XGBoost regression model trained on 3 million BTS flight records. Dynamically predicts departure delays based on engineered features (sine/cosine time encodings, holiday proximity, origin/destination weather). 
