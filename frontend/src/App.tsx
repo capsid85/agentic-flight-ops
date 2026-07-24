@@ -276,26 +276,17 @@ export default function App() {
                       </>
                     ) : '--'}
                   </div>
-                  <div className="text-[8px] text-slate-500 font-mono mt-0.5">
-                    {data ? (data?.risk?.confidence_score >= 0.90 ? 'Radar Ground Proximity' : 'ML Variance Estimate') : 'Awaiting Data'}
-                  </div>
                 </div>
                 <div className="glass-card flex-1 border-rose-500/20 p-2.5 flex flex-col justify-between">
                   <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Weather Risk</div>
                   <div className={`text-lg font-bold mt-1 ${data?.weather?.dest_risk === 'High' ? 'text-rose-500 data-glow' : 'text-emerald-400'}`}>
                     {data ? (data?.weather?.dest_risk?.toUpperCase() || 'UNK') : '--'}
                   </div>
-                  <div className="text-[8px] text-slate-500 font-mono mt-0.5">
-                    {data ? `Origin: ${data?.weather?.origin_risk || 'Low'}` : 'Awaiting Data'}
-                  </div>
                 </div>
                 <div className="glass-card flex-1 border-cyan-500/20 p-2.5 flex flex-col justify-between">
                   <div className="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Confidence</div>
                   <div className="text-xl font-bold text-cyan-400 mt-1 data-glow">
                     {data ? `${Math.round((data?.risk?.confidence_score || 0) * 100)}%` : '--'}
-                  </div>
-                  <div className="text-[8px] text-slate-500 font-mono mt-0.5">
-                    {data ? (data?.risk?.confidence_score >= 0.90 ? 'High Certainty' : 'Standard Baseline') : 'Awaiting Data'}
                   </div>
                 </div>
               </div>
