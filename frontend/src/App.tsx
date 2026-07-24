@@ -30,7 +30,8 @@ const AIRPORT_NAMES: Record<string, string> = {
   "CVG": "Cincinnati", "CMH": "Columbus", "RSW": "Fort Myers",
   "PBI": "West Palm Beach", "JAX": "Jacksonville", "ANC": "Anchorage",
   "LHR": "London", "CDG": "Paris", "FRA": "Frankfurt", "HND": "Tokyo",
-  "DXB": "Dubai", "SYD": "Sydney", "YYZ": "Toronto", "MEX": "Mexico City"
+  "DXB": "Dubai", "SYD": "Sydney", "YYZ": "Toronto", "MEX": "Mexico City",
+  "HOU": "Houston"
 };
 
 const getAirportName = (code: string) => AIRPORT_NAMES[code] || code;
