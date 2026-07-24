@@ -86,6 +86,7 @@ graph TD
 5. Start the frontend: `cd frontend && npm install && npm run dev`.
 
 ## 🔮 Future Scope
-- **Live Aircraft Frame Tracking**: Integrate with enterprise APIs (e.g., Cirium, FlightAware) to track physical tail numbers across routes, enabling live ML prediction of cascading "Late Aircraft" delays.
+- **Systemic Congestion Integration**: Integrate with paid enterprise aviation APIs (e.g., Cirium, FlightAware Firehose) to ingest real-time, airport-wide departure delays. This allows the live inference pipeline to capture systemic airport backups, a feature our ML model is already trained to mathematically handle via the `CONCURRENT_DELAYS_AT_ORIGIN` variable.
+- **Live Aircraft Frame Tracking**: Integrate with enterprise APIs to track physical tail numbers across routes, enabling live ML prediction of cascading "Late Aircraft" delays.
 - **Continuous ML Training (MLOps)**: Implement an Airflow pipeline to automatically retrain the XGBoost delay predictor on a weekly basis, preventing data drift from seasonal airline schedule shifts.
 - **Crew Scheduling Agent**: Add a dedicated LangGraph agent to monitor FAA Part 117 crew rest regulations, ensuring recommended flight delays do not cause crew timeout cancellations.
